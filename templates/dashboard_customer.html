@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Customer Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="/static/css/customer.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <h2>Smart Service Desk</h2>
+  <span class="role-label">Customer Dashboard</span>
+  <button class="logout" onclick="goHome()">Logout</button>
+</header>
+
+<!-- MAIN -->
+<div class="main">
+
+  <!-- LEFT PANEL -->
+  <aside class="left">
+    <div class="left-header">
+      <span>Support Tickets</span>
+      <button class="new-ticket" onclick="showCreate()">+ New Ticket</button>
+    </div>
+
+    <!-- 🔥 Dynamic Ticket List -->
+    <div class="ticket-box"></div>
+  </aside>
+
+  <!-- RIGHT PANEL -->
+  <main class="right">
+
+    <!-- 🎫 CREATE TICKET -->
+    <section id="createView">
+      <label>Subject</label>
+      <input type="text" id="subjectInput" placeholder="Enter subject">
+      <div class="error" id="subjectError"></div>
+
+      <label>Description</label>
+      <textarea id="descriptionInput" placeholder="Describe your issue"></textarea>
+      <div class="error" id="descriptionError"></div>
+
+      <label>Files</label>
+      <input type="file" id="fileInput">
+      <div class="error" id="fileError"></div>
+
+      <button class="send" onclick="createTicket()">Send</button>
+    </section>
+
+    <!-- 🔍 VIEW TICKET -->
+    <section id="viewView" class="hidden">
+      <label>Subject</label>
+      <input type="text" id="viewSubject" disabled>
+
+      <label>Description</label>
+      <textarea id="viewDescription" disabled></textarea>
+
+      <label>Files</label>
+      <input type="text" id="viewFile" disabled>
+
+      <label>Agent Reply</label>
+      <textarea id="agentReply" disabled></textarea>
+    </section>
+
+  </main>
+</div>
+
+<script src="/static/js/customer.js"></script>
+</body>
+</html>

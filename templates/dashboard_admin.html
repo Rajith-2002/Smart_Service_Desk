@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Smart Service Desk | Admin Dashboard</title>
+  <link rel="stylesheet" href="/static/css/admin.css">
+  <link rel="stylesheet" href="/static/css/faqmanagement.css">
+  <link rel="stylesheet" href="/static/css/kbmanagement.css">
+  <link rel="stylesheet" href="/static/css/responsive.css">
+  <link rel="stylesheet" href="/static/css/usermanagement.css">
+  <link rel="stylesheet" href="/static/css/agentmanagement.css">
+</head>
+<body>
+
+<!-- ================= TOP BAR ================= -->
+<header class="topbar">
+  <div class="logo">Smart Service Desk</div>
+  <div class="page-title">Admin Dashboard</div>
+  <button class="logout-btn">Logout</button>
+</header>
+
+<div class="layout">
+
+  <!-- ================= SIDEBAR ================= -->
+  <aside class="sidebar">
+    <div class="admin-header">Admin Panel</div>
+
+    <ul class="menu">
+      <li onclick="loadModule('users', this)" id="defaultMenu">User Management</li>
+      <li onclick="loadModule('agents', this)">Agent Management</li>
+      <li onclick="loadModule('faq', this)">FAQ Management</li>
+      <li onclick="loadModule('kb', this)">KB Management</li>
+    </ul>
+  </aside>
+
+  <!-- ================= MAIN ================= -->
+  <main class="main">
+
+    <!-- TOP COUNTS -->
+    <section class="metrics">
+      <div class="metric-card">
+        <span>Users</span>
+        <strong id="usersCount">0</strong>
+      </div>
+      <div class="metric-card">
+        <span>Agents</span>
+        <strong id="agentCount">0</strong>
+      </div>
+      <div class="metric-card">
+        <span>FAQs</span> <!-- ✅ CHANGED -->
+        <strong id="faqCount">0</strong> <!-- ✅ CHANGED -->
+      </div>
+      <div class="metric-card">
+        <span>KB Uploaded</span>
+        <strong id="kbCount">0</strong>
+      </div>
+    </section>
+
+    <!-- CONTENT -->
+    <section class="content" id="contentArea">
+      <!-- ❌ REMOVED EMPTY OVERVIEW -->
+      <!-- ✔ This will be dynamically loaded -->
+    </section>
+
+  </main>
+</div>
+
+<script src="/static/js/admin.js"></script>
+<script src="/static/js/faq.js"></script>
+<script src="/static/js/users.js"></script>
+<script src="/static/js/kbmanagement.js"></script>
+<script src="/static/js/agentmanagement.js"></script>
+
+<!-- 🔥 AUTO LOAD USER MANAGEMENT -->
+<script>
+  window.onload = function () {
+    const defaultMenu = document.getElementById("defaultMenu");
+    loadModule('users', defaultMenu); // ✅ load users automatically
+    loadFaqCount(); // ✅ load FAQ count
+  };
+</script>
+
+</body>
+</html>

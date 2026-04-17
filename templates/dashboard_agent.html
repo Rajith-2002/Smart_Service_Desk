@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Agent Dashboard | Smart Service Desk</title>
+  <link rel="stylesheet" href="/static/css/dashboard_agent.css">
+</head>
+<body>
+
+<header class="topbar">
+  <h1>Smart Service Desk</h1>
+  <button class="logout-btn" onclick="logout()">Logout</button>
+</header>
+
+<div class="container">
+
+  <!-- LEFT PANEL -->
+ <aside class="left-panel">
+  <h2>Agent Dashboard</h2>
+
+  <!-- 🔥 Department at Top -->
+  <div class="stat-card dept">
+    <p>Department</p>
+    <span id="agentDept">-</span>
+  </div>
+
+  <div class="stat-card">
+    <p>Total Tickets</p>
+    <span id="totalCount">0</span>
+  </div>
+
+  <div class="stat-card open">
+    <p>Opened Tickets</p>
+    <span id="openCount">0</span>
+  </div>
+
+  <div class="stat-card closed">
+    <p>Closed Tickets</p>
+    <span id="closedCount">0</span>
+  </div>
+
+</aside>
+
+  <!-- RIGHT PANEL -->
+  <section class="right-panel">
+    <h2>Queue</h2>
+
+    <div class="queue-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Ticket No</th>
+            <th>Subject</th>
+            <th>Time</th>
+            <th>Priority</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="ticketTableBody">
+          <!-- 🔥 Dynamic rows will come here -->
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+</div>
+
+<script src="/static/js/dashboard_agent.js"></script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body{
+  background:#f4f6fb;
+  color:#222;
+}
+
+/* ================= TOP BAR ================= */
+.topbar{
+  height:60px;
+  background:#ffffff;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 30px;
+  box-shadow:0 2px 8px rgba(0,0,0,0.05);
+}
+
+.logo{
+  font-size:20px;
+  font-weight:700;
+  color:#6b4eff;
+}
+
+.logout{
+  background:#ff5c5c;
+  border:none;
+  color:#fff;
+  padding:8px 14px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+/* ================= LAYOUT ================= */
+.layout{
+  display:flex;
+  height:calc(100vh - 60px);
+}
+
+/* ================= SIDEBAR (QUEUE) ================= */
+.sidebar{
+  width:280px;
+  background:#ffffff;
+  padding:20px;
+  border-right:1px solid #ddd;
+  overflow-y:auto;
+}
+
+.sidebar h3{
+  margin-bottom:20px;
+  font-size:18px;
+}
+
+/* Queue item */
+.queue{
+  background:#eef1ff;
+  padding:14px;
+  border-radius:8px;
+  margin-bottom:12px;
+  cursor:pointer;
+  transition:0.2s;
+  border-left:5px solid #6b4eff;
+}
+
+.queue:hover{
+  background:#dde2ff;
+}
+
+.queue.high{
+  border-left-color:#ff5c5c;
+}
+
+.queue.medium{
+  border-left-color:#ffb703;
+}
+
+.queue.low{
+  border-left-color:#2ecc71;
+}
+
+/* ================= CONTENT ================= */
+.content{
+  flex:1;
+  padding:30px;
+  overflow-y:auto;
+}
+
+/* ================= CARD ================= */
+.card{
+  background:#ffffff;
+  padding:25px;
+  border-radius:14px;
+  margin-bottom:25px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.06);
+}
+
+.card h2{
+  margin-bottom:10px;
+  font-size:20px;
+}
+
+.card p{
+  color:#555;
+  line-height:1.6;
+}
+
+/* ================= CHAT STYLE ================= */
+.chat-box{
+  background:#f9f9ff;
+  padding:15px;
+  border-radius:10px;
+  margin-bottom:15px;
+}
+
+.chat.customer{
+  background:#eef1ff;
+  border-left:5px solid #6b4eff;
+}
+
+.chat.agent{
+  background:#e8fff1;
+  border-left:5px solid #2ecc71;
+}
+
+/* ================= INPUTS ================= */
+textarea{
+  width:100%;
+  min-height:120px;
+  padding:12px;
+  border-radius:8px;
+  border:1px solid #ccc;
+  resize:none;
+  font-size:15px;
+}
+
+textarea:focus{
+  outline:none;
+  border-color:#6b4eff;
+}
+
+/* ================= BUTTON ================= */
+button{
+  background:#6b4eff;
+  color:#ffffff;
+  border:none;
+  padding:12px 20px;
+  border-radius:8px;
+  cursor:pointer;
+  margin-top:15px;
+  font-size:15px;
+}
+
+button:hover{
+  opacity:0.9;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width:768px){
+  .layout{
+    flex-direction:column;
+  }
+
+  .sidebar{
+    width:100%;
+    border-right:none;
+    border-bottom:1px solid #ddd;
+  }
+}

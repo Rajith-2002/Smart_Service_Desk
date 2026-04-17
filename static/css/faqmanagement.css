@@ -1,0 +1,261 @@
+/* ========================================================= */
+/* ================= FAQ MANAGEMENT STYLES ================= */
+/* ========================================================= */
+
+/* Header */
+.faq-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Add Button */
+.add-btn {
+  background: linear-gradient(135deg, #6c63ff, #857dff);
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.add-btn:hover {
+  opacity: 0.9;
+}
+
+/* Error Text */
+.error-text {
+  color: red;
+  font-size: 12px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* ================= TABLE ================= */
+
+.faq-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+  table-layout: fixed;
+}
+
+/* Common cell styles */
+.faq-table th,
+.faq-table td {
+  padding: 14px 16px;
+  border-top: 1px solid #eee;
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+/* Header */
+.faq-table th {
+  background: #f3f4f9;
+  text-align: left;
+  font-weight: 600;
+}
+
+/* 🔥 COLUMN WIDTHS (FIXED ALIGNMENT) */
+
+/* Question */
+.faq-table th:nth-child(1),
+.faq-table td:nth-child(1) {
+  width: 25%;
+}
+
+/* Answer */
+.faq-table th:nth-child(2),
+.faq-table td:nth-child(2) {
+  width: 50%;
+  word-break: break-word;
+  white-space: normal;
+  line-height: 1.6;
+}
+
+/* Status */
+.faq-table th:nth-child(3),
+.faq-table td:nth-child(3) {
+  width: 10%;
+  text-align: center;
+}
+
+/* Actions */
+.faq-table th:nth-child(4),
+.faq-table td:nth-child(4) {
+  width: 15%;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* ================= ACTION BUTTONS ================= */
+
+.faq-table td:nth-child(4) button {
+  margin: 0 4px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.faq-table button:first-child {
+  background: #6366f1;
+  color: #fff;
+}
+
+.faq-table button:last-child {
+  background: #ef4444;
+  color: #fff;
+}
+
+/* ================= STATUS ================= */
+
+.status-active {
+  color: #059669;
+  font-weight: 600;
+}
+
+.status-inactive {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+/* ================= FORM ================= */
+
+.faq-form {
+  background: #f9fafc;
+  padding: 18px;
+  border-radius: 14px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+}
+
+.faq-form h3 {
+  margin-bottom: 12px;
+}
+
+/* Inputs */
+.faq-form input,
+.faq-form textarea,
+.faq-form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+/* Labels */
+.faq-form label {
+  display: block;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+/* ================= FORM ACTIONS ================= */
+
+.form-actions {
+  display: flex;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+/* Submit button */
+.faq-form button {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Close button */
+.close-btn {
+  background: #ef4444 !important;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Answer formatting */
+.faq-answer {
+  white-space: normal;
+}
+
+/* ========================================================= */
+/* ================= RESPONSIVE ADDITIONS ================== */
+/* ========================================================= */
+
+@media (max-width: 992px) {
+
+  .faq-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .faq-table {
+    min-width: 900px;
+  }
+
+  .faq-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .faq-table td:nth-child(4) button {
+    padding: 6px 10px;
+    font-size: 12px;
+    margin: 2px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .faq-form {
+    padding: 14px;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .faq-form button,
+  .close-btn {
+    width: 100%;
+  }
+
+  .faq-table th,
+  .faq-table td {
+    padding: 12px 10px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 576px) {
+
+  .faq-table {
+    min-width: 950px;
+  }
+
+  .faq-table td:nth-child(4) button {
+    padding: 5px 8px;
+    font-size: 11px;
+  }
+}

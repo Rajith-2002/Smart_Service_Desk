@@ -1,0 +1,114 @@
+/* ========================================================= */
+/* ================= RESPONSIVE STYLES ===================== */
+/* ========================================================= */
+
+/* ================= TABLET VIEW ================= */
+@media (max-width: 1024px) {
+
+  /* Sidebar shrink */
+  .sidebar {
+    width: 200px;
+  }
+
+  /* Reduce padding */
+  .main {
+    padding: 12px;
+  }
+
+  .content {
+    padding: 20px;
+  }
+
+  /* Metrics grid tighter */
+  .metrics {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+}
+
+
+/* ================= MOBILE VIEW ================= */
+@media (max-width: 768px) {
+
+  /* Stack layout */
+  .layout {
+    flex-direction: column;
+  }
+
+  /* Sidebar becomes top menu */
+  .sidebar {
+    width: 100%;
+    display: flex;
+    overflow-x: auto;
+    padding: 10px;
+  }
+
+  .menu {
+    display: flex;
+    gap: 10px;
+  }
+
+  .menu li {
+    white-space: nowrap;
+    margin-bottom: 0;
+  }
+
+  /* Main adjustments */
+  .main {
+    padding: 10px;
+  }
+
+  .content {
+    padding: 16px;
+  }
+
+  /* Metrics become 2 columns */
+  .metrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Tables scroll horizontally */
+  .faq-table,
+  .kb-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
+
+/* ================= SMALL MOBILE ================= */
+@media (max-width: 480px) {
+
+  /* Topbar adjustments */
+  .topbar {
+    flex-direction: column;
+    height: auto;
+    gap: 8px;
+    padding: 12px;
+  }
+
+  .logo {
+    font-size: 16px;
+  }
+
+  .page-title {
+    font-size: 14px;
+  }
+
+  .logout-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  /* Metrics single column */
+  .metrics {
+    grid-template-columns: 1fr;
+  }
+
+  /* Buttons smaller */
+  .add-btn,
+  .kb-upload button {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+}

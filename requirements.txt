@@ -1,0 +1,25 @@
+fastapi
+uvicorn[standard]
+python-dotenv
+sqlalchemy
+passlib[bcrypt]
+python-jose
+jinja2
+python-multipart
+email-validator
+cryptography
+pymysql
+aiofiles
+
+# AI / RAG
+sentence-transformers
+faiss-cpu
+groq
+
+# File handling
+python-docx
+pypdf
+PyPDF2
+
+# HTTP
+requests

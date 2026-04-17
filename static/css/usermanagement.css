@@ -1,0 +1,79 @@
+/* ========================================================= */
+/* ================= USER MANAGEMENT STYLES ================= */
+/* ========================================================= */
+
+/* Header */
+.user-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* ================= TABLE ================= */
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+}
+
+.user-table th {
+  background: #f3f4f9;
+  text-align: left;
+  padding: 12px;
+  font-size: 14px;
+}
+
+.user-table td {
+  padding: 12px;
+  border-top: 1px solid #eee;
+  font-size: 14px;
+}
+
+/* ================= STATUS ================= */
+
+.user-active {
+  color: #059669;
+  font-weight: 600;
+}
+
+.user-inactive {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+/* ================= ACTION BUTTON ================= */
+
+.user-table button {
+  padding: 6px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+/* Enable button */
+.user-enable {
+  background: #10b981;
+  color: #fff;
+}
+
+.user-enable:hover {
+  background: #059669;
+}
+
+/* Disable button */
+.user-disable {
+  background: #ef4444;
+  color: #fff;
+}
+
+.user-disable:hover {
+  background: #dc2626;
+}

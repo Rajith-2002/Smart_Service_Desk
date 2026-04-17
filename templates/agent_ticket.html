@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Agent Ticket | Smart Service Desk</title>
+  <link rel="stylesheet" href="/static/css/agent_ticket.css">
+</head>
+<body>
+
+<header class="topbar">
+    <h2>Agent Response</h2>
+    <button class="back-btn" onclick="goBack()">← Back</button>
+</header>
+
+<div class="ticket-page">
+
+  <!-- LEFT -->
+  <div class="ticket-main">
+
+    <section class="card">
+      <h3 class="card-title">Ticket Details</h3>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Ticket No</label>
+          <input id="ticketNo" disabled>
+        </div>
+
+        <div class="form-group">
+          <label>Subject</label>
+          <input id="subject" disabled>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Description</label>
+        <textarea id="description" disabled></textarea>
+      </div>
+    </section>
+
+    <section class="card">
+      <h3 class="card-title">Attachment Summary</h3>
+
+      <textarea id="aiSummary" class="ai-summary" disabled></textarea>
+    </section>
+
+    <section class="card" id="responseBlock">
+      <h3 class="card-title">Agent Response</h3>
+
+      <textarea id="responseBox" class="response-box" placeholder="Type your response..."></textarea>
+
+      <div class="action-row">
+        <button class="send-btn" onclick="sendResponse()">Send Response</button>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- RIGHT -->
+  <aside class="ticket-meta">
+
+    <section class="card">
+      <h3 class="card-title">Ticket Meta</h3>
+
+      <div class="meta-group">
+        <label>Category</label>
+        <input id="category" disabled>
+      </div>
+
+      <div class="meta-group">
+        <label>Priority</label>
+        <input id="priority" disabled>
+      </div>
+
+      <div class="meta-group">
+        <label>Status</label>
+        <input id="ticketStatus" disabled>
+      </div>
+    </section>
+
+  </aside>
+
+</div>
+
+<script src="/static/js/agent_ticket.js"></script>
+</body>
+</html>

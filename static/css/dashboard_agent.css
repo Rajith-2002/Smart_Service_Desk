@@ -1,0 +1,287 @@
+/* ========================================================= */
+/* ================= GLOBAL ================================ */
+/* ========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* FULL PAGE */
+html, body {
+  height: 100%;
+}
+
+body {
+  background: #f3f1ff;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* ========================================================= */
+/* ================= TOPBAR ================================ */
+/* ========================================================= */
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 30px;
+  background: linear-gradient(90deg,#6a4cff,#8f6bff);
+  color: white;
+  box-shadow: 0 4px 14px rgba(106,76,255,0.18);
+}
+
+/* LOGOUT */
+.logout-btn {
+  background: #ff4d4d;
+  border: none;
+  padding: 8px 20px;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+
+/* ========================================================= */
+/* ================= LAYOUT ================================ */
+/* ========================================================= */
+
+.container {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* LEFT PANEL */
+.left-panel {
+  width: 25%;
+  background: white;
+  padding: 30px;
+  border-right: 1px solid #ececff;
+  display: flex;
+  flex-direction: column;
+}
+
+.left-panel h2 {
+  margin-bottom: 10px;
+  font-size: 30px;
+  font-weight: 700;
+  color: #111827;
+}
+
+
+/* ========================================================= */
+/* ================= STAT CARDS ============================ */
+/* ========================================================= */
+
+.stat-card {
+  background: #f8f7ff;
+  padding: 22px;
+  margin-top: 20px;   /* only top spacing */
+  border-radius: 16px;
+  text-align: center;
+  border-left: 6px solid #6a4cff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+}
+
+/* 🔥 REMOVE extra spacing between cards */
+.stat-card + .stat-card {
+  margin-top: 15px;
+}
+
+/* 🔥 ONLY add space after last card */
+.left-panel .stat-card:last-child {
+  margin-bottom: 20px;
+}
+
+
+/* OPEN CARD */
+.stat-card.open {
+  border-left-color: #ef4444;
+}
+
+/* CLOSED CARD */
+.stat-card.closed {
+  border-left-color: #22c55e;
+}
+
+
+/* ================= DEPARTMENT CARD ================= */
+
+.stat-card.dept {
+  border-left-color: #3b82f6;
+}
+
+/* Dynamic colors */
+.stat-card.dept.it {
+  border-left-color: #3b82f6;
+}
+
+.stat-card.dept.hr {
+  border-left-color: #8b5cf6;
+}
+
+.stat-card.dept.facility {
+  border-left-color: #f59e0b;
+}
+
+
+/* TEXT */
+.stat-card p {
+  font-size: 16px;
+  color: #4b5563;
+  margin-bottom: 10px;
+}
+
+.stat-card span {
+  font-size: 32px;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* Number Colors */
+.stat-card.open span { color: #dc2626; }
+.stat-card.closed span { color: #16a34a; }
+
+
+/* ========================================================= */
+/* ================= RIGHT PANEL =========================== */
+/* ========================================================= */
+
+.right-panel {
+  width: 75%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.right-panel h2 {
+  margin-bottom: 15px;
+  font-size: 30px;
+  font-weight: 700;
+  color: #111827;
+}
+
+
+/* ========================================================= */
+/* ================= TABLE ================================ */
+/* ========================================================= */
+
+.queue-table {
+  background: white;
+  border-radius: 16px;
+  flex: 1;
+  overflow-y: auto;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+/* TABLE */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* HEADER */
+thead th {
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 2;
+  border-bottom: 2px solid #eef2f7;
+  font-weight: 700;
+  color: #374151;
+}
+
+/* CELLS */
+th, td {
+  padding: 16px;
+  border-bottom: 1px solid #eef2f7;
+  text-align: center;
+  font-size: 15px;
+}
+
+/* ROW HOVER */
+tbody tr {
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+tbody tr:hover {
+  background: #f5f3ff;
+  box-shadow: inset 4px 0 0 #6a4cff;
+}
+
+
+/* ========================================================= */
+/* ================= PRIORITY ============================== */
+/* ========================================================= */
+
+.priority.high {
+  color: #dc2626;
+  font-weight: 700;
+}
+
+.priority.medium {
+  color: #f59e0b;
+  font-weight: 700;
+}
+
+.priority.low {
+  color: #16a34a;
+  font-weight: 700;
+}
+
+
+/* ========================================================= */
+/* ================= STATUS ================================ */
+/* ========================================================= */
+
+.status.open {
+  color: #dc2626;
+  font-weight: 700;
+}
+
+.status.closed {
+  color: #16a34a;
+  font-weight: 700;
+}
+
+
+/* ========================================================= */
+/* ================= SCROLLBAR ============================= */
+/* ========================================================= */
+
+.queue-table::-webkit-scrollbar {
+  width: 6px;
+}
+
+.queue-table::-webkit-scrollbar-thumb {
+  background: #c5c0ff;
+  border-radius: 10px;
+}
+
+
+/* ========================================================= */
+/* ================= RESPONSIVE ============================ */
+/* ========================================================= */
+
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .left-panel,
+  .right-panel {
+    width: 100%;
+  }
+
+  .left-panel {
+    border-right: none;
+    border-bottom: 1px solid #ececff;
+  }
+}

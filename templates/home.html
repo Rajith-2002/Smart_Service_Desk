@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Smart Service Desk</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/static/css/home.css" />
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <header class="topbar">
+  <div class="logo">Smart Service Desk</div>
+  <button class="login-btn" onclick="goToLogin()">Login</button>
+</header>
+
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>How can we help you?</h1>
+    <p>Search FAQs or explore our knowledge base before contacting support</p>
+  </section>
+
+  <!-- MAIN -->
+  <section class="main">
+
+    <!-- FAQ PANEL -->
+    <div class="panel">
+      <div class="panel-header">Frequently Asked Questions</div>
+
+      <div class="search-row">
+        <input
+          type="text"
+          id="faqInput"
+          placeholder="Search FAQs..."
+          onkeyup="searchFAQ()"
+        />
+        <button onclick="searchFAQ()">Search</button>
+      </div>
+
+      <!-- FAQ RESULT BOX -->
+      <div id="faqResults" class="result-box">
+        <div class="placeholder">
+          Top 5 matching FAQs will appear here
+        </div>
+      </div>
+    </div>
+
+    <!-- KB PANEL -->
+    <div class="panel">
+      <h3 class="kb-title">KB Search</h3>
+
+      <div class="search-row">
+        <input type="text" id="kbInput" placeholder="Search knowledge base..." />
+        <button onclick="searchKB()">Search</button>
+      </div>
+
+      <div id="kbResults" class="result-box">
+        Matching documents will appear here
+      </div>
+    </div>
+
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <p>Still can’t find the answer?</p>
+    <button onclick="contactAgent()">Contact Our Agent</button>
+  </section>
+
+  <script src="/static/js/home.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+/* ========================================================= */
+/* ================= KB MANAGEMENT STYLES ================== */
+/* ========================================================= */
+
+/* Upload Section */
+.kb-upload {
+  margin-bottom: 15px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.kb-upload input[type="file"] {
+  padding: 6px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #fff;
+  font-size: 14px;
+}
+
+/* Upload Button */
+.kb-upload button {
+  background: linear-gradient(135deg, #6c63ff, #857dff);
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.kb-upload button:hover {
+  opacity: 0.9;
+}
+
+/* ================= TABLE ================= */
+
+.kb-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+}
+
+.kb-table th {
+  background: #f4f6f9;
+  padding: 10px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.kb-table td {
+  padding: 10px;
+  border-top: 1px solid #eee;
+  font-size: 14px;
+}
+
+/* ================= LINKS ================= */
+
+.kb-link {
+  color: #4a6cf7;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.kb-link:hover {
+  text-decoration: underline;
+}
+
+/* ================= DELETE BUTTON ================= */
+
+.delete-btn {
+  background: #ff4d4f;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.delete-btn:hover {
+  background: #d9363e;
+}

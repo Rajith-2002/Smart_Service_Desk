@@ -1,0 +1,361 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Segoe UI", sans-serif;
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+html, body{
+  height:100%;
+}
+
+body{
+  background:
+    radial-gradient(circle at top left, #eef2ff 0%, #f7f9ff 35%, #eef6ff 100%);
+}
+
+/* =========================
+   HEADER
+========================= */
+.header{
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:18px 32px;
+
+  border-bottom:1px solid rgba(255,255,255,0.4);
+
+  box-shadow:0 4px 20px rgba(0,0,0,0.06);
+
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.header h2{
+  font-size:30px;
+  font-weight:700;
+  color:#111827;
+}
+
+.role-label{
+  font-size:17px;
+  font-weight:600;
+  color:#6b7280;
+  margin-right:30px;
+  white-space:nowrap;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.logout{
+  background:linear-gradient(135deg,#ff5f6d,#ff4b2b);
+  color:#fff;
+  border:none;
+  padding:10px 18px;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:600;
+  box-shadow:0 6px 18px rgba(255,75,43,0.25);
+  transition:0.3s;
+}
+
+.logout:hover{
+  opacity:0.92;
+}
+
+.new-ticket{
+  background:linear-gradient(135deg,#6b5cff,#8b7dff);
+  color:#fff;
+  border:none;
+  padding:10px 18px;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:600;
+  box-shadow:0 6px 18px rgba(107,92,255,0.25);
+  transition:0.3s;
+}
+
+.new-ticket:hover{
+  opacity:0.92;
+}
+
+.send{
+  margin-top:26px;
+  align-self:flex-start;
+
+  background:linear-gradient(135deg,#22c55e,#16a34a);
+  color:#fff;
+  border:none;
+
+  padding:12px 30px;
+  border-radius:10px;
+
+  cursor:pointer;
+  font-size:15px;
+  font-weight:600;
+
+  box-shadow:0 8px 18px rgba(34,197,94,0.25);
+  transition:0.3s;
+}
+
+.send:hover{
+  opacity:0.92;
+}
+
+/* =========================
+   MAIN LAYOUT
+========================= */
+.main{
+  min-height:calc(100vh - 80px);
+  display:flex;
+  gap:24px;
+  padding:24px;
+  align-items:stretch;
+}
+
+/* =========================
+   PANELS
+========================= */
+.left,
+.right{
+  background: rgba(255,255,255,0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border:1px solid rgba(255,255,255,0.5);
+
+  border-radius:20px;
+
+  box-shadow:
+    0 12px 32px rgba(0,0,0,0.08),
+    inset 0 1px 0 rgba(255,255,255,0.4);
+}
+
+/* LEFT PANEL */
+.left{
+  width:35%;
+  padding:24px;
+  display:flex;
+  flex-direction:column;
+}
+
+/* RIGHT PANEL */
+.right{
+  width:65%;
+  padding:30px;
+  display:flex;
+  flex-direction:column;
+}
+
+/* =========================
+   LEFT HEADER
+========================= */
+.left-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:18px;
+}
+
+.left-header h3{
+  font-size:24px;
+  font-weight:700;
+  color:#111827;
+}
+
+/* =========================
+   TICKET BOX
+========================= */
+.ticket-box{
+  border:1px solid #e5e7eb;
+  border-radius:16px;
+  padding:14px;
+  flex:1;
+  overflow-y:auto;
+  background:#f9fbff;
+}
+
+/* TICKET ROW */
+.ticket-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:14px 16px;
+  border-radius:12px;
+
+  cursor:pointer;
+  margin-bottom:10px;
+
+  transition:background 0.25s ease;
+}
+
+.ticket-row:hover{
+  background:#eef2ff;
+}
+
+.ticket-row.active{
+  background:#e0e7ff;
+  border-left:4px solid #6b5cff;
+}
+
+/* =========================
+   STATUS BADGES
+========================= */
+.status{
+  padding:6px 14px;
+  font-size:12px;
+  border-radius:999px;
+  font-weight:700;
+}
+
+.status.open{
+  background:#fee2e2;
+  color:#dc2626;
+}
+
+.status.close{
+  background:#dcfce7;
+  color:#15803d;
+}
+
+/* =========================
+   FORM
+========================= */
+label{
+  margin-top:18px;
+  font-weight:600;
+  color:#111827;
+  font-size:14px;
+}
+
+input,
+textarea{
+  margin-top:8px;
+  padding:14px 16px;
+
+  border-radius:12px;
+  border:1px solid #dbe1ea;
+
+  font-size:14px;
+  width:100%;
+
+  background:#f9fbff;
+
+  transition:0.3s;
+}
+
+input:focus,
+textarea:focus{
+  outline:none;
+  border-color:#6b5cff;
+  box-shadow:0 0 0 4px rgba(107,92,255,0.12);
+  background:#fff;
+}
+
+textarea{
+  min-height:130px;
+  resize:none;
+}
+
+/* FILE INPUT */
+input[type="file"]{
+  padding:12px;
+  background:#fff;
+}
+
+/* =========================
+   ERROR
+========================= */
+.error{
+  color:#dc2626;
+  font-size:12px;
+  margin-top:6px;
+  font-weight:500;
+}
+
+/* =========================
+   HIDDEN
+========================= */
+.hidden{
+  display:none;
+}
+
+/* =========================
+   TABLET
+========================= */
+@media (max-width:1023px){
+
+  .main{
+    flex-direction:column;
+    min-height:auto;
+  }
+
+  .left,
+  .right{
+    width:100%;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width:767px){
+
+  .header{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:12px;
+    padding:18px;
+  }
+
+  .logout{
+    align-self:flex-end;
+  }
+
+  .main{
+    padding:16px;
+    gap:16px;
+  }
+
+  .left,
+  .right{
+    padding:18px;
+    border-radius:16px;
+  }
+
+  .left-header{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:12px;
+  }
+
+  .new-ticket,
+  .send{
+    width:100%;
+    text-align:center;
+  }
+
+  .ticket-row{
+    padding:12px;
+  }
+
+  input,
+  textarea{
+    font-size:15px;
+  }
+
+  .header h2{
+    font-size:24px;
+  }
+}
