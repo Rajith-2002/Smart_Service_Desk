@@ -79,6 +79,9 @@ body {
 /* RIGHT META */
 .ticket-meta {
   width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
 /* =====================
@@ -216,11 +219,33 @@ textarea {
 @media (max-width: 1000px) {
   .ticket-page {
     flex-direction: column;
+    align-items: stretch;
   }
 
-  .ticket-main,
+  .ticket-main {
+    display: contents;
+  }
+
   .ticket-meta {
+    order: 2;
+    flex-direction: row;
     width: 100%;
+  }
+
+  .ticket-meta > section {
+    flex: 1;
+  }
+
+  .ticket-main > section:nth-child(1) {
+    order: 1;
+  }
+
+  .ticket-main > section:nth-child(2) {
+    order: 3;
+  }
+
+  .ticket-main > section:nth-child(3) {
+    order: 4;
   }
 
   .form-row {
@@ -259,5 +284,9 @@ textarea {
 
   .send-btn {
     width: 100%;
+  }
+
+  .ticket-meta {
+    flex-direction: column;
   }
 }

@@ -30,6 +30,9 @@ async function loadTicket() {
     document.getElementById("priority").value =
       ticket.priority || "—";
 
+    document.getElementById("customerId").value = ticket.customer_id || ticket.user_id || "—";
+    document.getElementById("customerName").value = ticket.customer_name || "—";
+
     // 🔒 hide response if closed
     if (ticket.status === "closed") {
   const responseBox = document.getElementById("responseBox");

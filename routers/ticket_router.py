@@ -3,6 +3,7 @@ from sqlalchemy.orm import Session
 from sqlalchemy import func
 from database import SessionLocal
 from models.ticket_model import Ticket
+from models.user import User
 import os
 import shutil
 
@@ -131,4 +132,15 @@ def get_ticket(ticket_id: int, db: Session = Depends(get_db)):
         Ticket.id == ticket_id
     ).first()
 
-    return ticket
+    if not ticket:
+        return None
+
+    user = db.query(User).filter(User.id == ticket.user_id).first()
+
+    data = {c.name: getattr(ticket, c.name) for c in ticket.__table__.columns}
+    
+    if user:
+        data["customer_name"] = user.name
+        data["customer_id"] = user.id
+
+    return data
